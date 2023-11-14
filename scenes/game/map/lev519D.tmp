@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk1h4bcoblksf"]
+
+[ext_resource type="Script" path="res://scenes/game/map/level_map.gd" id="1_6jjtp"]
+[ext_resource type="Script" path="res://scenes/game/map/MapParallaxBackground.gd" id="2_n42yq"]
+[ext_resource type="Texture2D" uid="uid://b05vbgj7i2j8i" path="res://graphics/map/background.jpg" id="3_xcle0"]
+[ext_resource type="PackedScene" uid="uid://ch0apdcf7s34h" path="res://scenes/game/map/tiles.tscn" id="4_wa5cn"]
+[ext_resource type="PackedScene" uid="uid://bihtde3etquy3" path="res://scenes/game/map/map_characters.tscn" id="5_3fwc1"]
+[ext_resource type="Script" path="res://scenes/game/map/map_characters.gd" id="6_5470d"]
+[ext_resource type="PackedScene" uid="uid://byb4v0txl0135" path="res://scenes/game/map/map_tile.tscn" id="7_edawe"]
+[ext_resource type="Script" path="res://scenes/game/map/MainCamera.gd" id="8_l7pbg"]
+
+[node name="LevelMap" type="Node2D"]
+script = ExtResource("1_6jjtp")
+
+[node name="MapParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_n42yq")
+
+[node name="BackgroundParallaxLayer" type="ParallaxLayer" parent="MapParallaxBackground"]
+
+[node name="Background" type="Sprite2D" parent="MapParallaxBackground/BackgroundParallaxLayer"]
+position = Vector2(954, 551)
+texture = ExtResource("3_xcle0")
+
+[node name="TilesParallaxLayer" type="ParallaxLayer" parent="MapParallaxBackground"]
+
+[node name="Tiles" parent="MapParallaxBackground/TilesParallaxLayer" instance=ExtResource("4_wa5cn")]
+position = Vector2(153, 98)
+
+[node name="CharactersParallaxLayer" type="ParallaxLayer" parent="MapParallaxBackground"]
+
+[node name="Characters" parent="MapParallaxBackground/CharactersParallaxLayer" instance=ExtResource("5_3fwc1")]
+script = ExtResource("6_5470d")
+
+[node name="TilesSprites" type="Node2D" parent="."]
+visible = false
+position = Vector2(89, 41)
+metadata/_edit_group_ = true
+
+[node name="MapTile1" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(196, 365)
+type = "Start"
+covered = false
+
+[node name="MapTile2" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(285, 230)
+
+[node name="MapTile3" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(375, 364)
+
+[node name="MapTile4" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(286, 499)
+
+[node name="MapTile5" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(464, 229)
+
+[node name="MapTile6" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(554, 364)
+
+[node name="MapTile7" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(465, 498)
+
+[node name="MapTile8" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(643, 229)
+
+[node name="MapTile9" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(733, 363)
+
+[node name="MapTile10" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(644, 498)
+
+[node name="MapTile11" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(822, 229)
+
+[node name="MapTile12" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(912, 363)
+
+[node name="MapTile13" parent="TilesSprites" instance=ExtResource("7_edawe")]
+position = Vector2(823, 497)
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(961, 544)
+zoom = Vector2(0.9, 0.9)
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("8_l7pbg")
+min_zoom = 0.7
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

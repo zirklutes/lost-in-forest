@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bihtde3etquy3"]
+
+[ext_resource type="PackedScene" uid="uid://b6vxdihm2g02i" path="res://scenes/characters/hansel.tscn" id="1_v7h3c"]
+[ext_resource type="PackedScene" uid="uid://ci3lbe12c6w5c" path="res://scenes/characters/gretel.tscn" id="2_tyix4"]
+[ext_resource type="Texture2D" uid="uid://12l2206js43q" path="res://icon.svg" id="3_n5vgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqbvp"]
+size = Vector2(76, 76)
+
+[node name="Characters" type="Node2D"]
+
+[node name="Hansel" parent="." instance=ExtResource("1_v7h3c")]
+visible = false
+position = Vector2(-18, -2)
+script = null
+
+[node name="Gretel" parent="." instance=ExtResource("2_tyix4")]
+visible = false
+position = Vector2(19, -5)
+script = null
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_fqbvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_n5vgn")

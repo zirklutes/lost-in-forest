@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci3lbe12c6w5c"]
+
+[ext_resource type="PackedScene" uid="uid://dg48g6we473bn" path="res://scenes/characters/character.tscn" id="1_401k4"]
+[ext_resource type="Texture2D" uid="uid://bj5a2vvlqceji" path="res://graphics/characters/Gretel.png" id="2_hgyj1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gu6bk"]
+radius = 11.0
+height = 100.0
+
+[node name="Gretel" instance=ExtResource("1_401k4")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CapsuleShape2D_gu6bk")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_hgyj1")
