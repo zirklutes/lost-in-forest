@@ -23,10 +23,8 @@ func _unhandled_input(event):
 			print('zoom', zoom)
 			position -= event.relative *  1.5
 	elif event.is_action_pressed("zoom_in"):
-		var target = event.position
 		_set_zoom_level(_zoom_level - zoom_factor)
 	elif event.is_action_pressed("zoom_out"):
-		var target = event.position
 		_set_zoom_level(_zoom_level + zoom_factor)
 		
 
