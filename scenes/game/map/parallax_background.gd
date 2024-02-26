@@ -11,7 +11,7 @@ func _ready():
 	relative_x = 0
 	relative_y = 0
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		var mouse_x = event.position.x
 		var mouse_y = event.position.y
